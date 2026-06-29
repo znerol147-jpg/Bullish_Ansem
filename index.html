@@ -106,6 +106,37 @@
     width: max-content;
     animation: conveyor 40s linear infinite;
 }
+
+        /* Multi-Axis Smooth Drift Engine Configurations */
+@keyframes floatAxisOne {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) translateX(6px) rotate(1deg); }
+}
+@keyframes floatAxisTwo {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50% { transform: translateY(10px) translateX(-8px) rotate(-1.5deg); }
+}
+@keyframes floatAxisThree {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) translateX(-6px) rotate(-1deg); }
+}
+@keyframes floatAxisFour {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    50% { transform: translateY(14px) translateX(4px) rotate(1.5deg); }
+}
+
+.float-card {
+    will-change: transform;
+}
+.style-one { animation: floatAxisOne 6s ease-in-out infinite; }
+.style-two { animation: floatAxisTwo 7s ease-in-out infinite; }
+.style-three { animation: floatAxisThree 5.5s ease-in-out infinite; }
+.style-four { animation: floatAxisFour 8s ease-in-out infinite; }
+
+/* Froze motion loop on card hover */
+.float-card:hover {
+    animation-play-state: paused !important;
+}
     </style>
 </head>
 <body class="text-slate-200 overflow-x-hidden scroll-smooth">
@@ -236,49 +267,41 @@
         </div>
     </section>
 
-<!-- Endless Horizontal Trenches Conveyor Belt -->
-<section id="lore-belt" class="py-20 bg-[#070d1a]/50 border-y border-green-500/10 overflow-hidden relative">
-    <div class="max-w-7xl mx-auto px-6 mb-10">
-        <h2 class="heading-font text-2xl md:text-3xl font-bold text-left text-white tracking-wider">
-            TRENCH REEL <span class="text-green-400">//</span> LIVE ALERTS
+<section id="floating-trench" class="py-24 px-6 max-w-7xl mx-auto overflow-hidden relative">
+    <div class="text-center mb-16">
+        <h2 class="heading-font text-2xl md:text-3xl font-bold text-white tracking-widest">
+            THE TRENCHES <span class="text-green-400">//</span> ALIVE
         </h2>
+        <p class="text-xs text-slate-400 font-mono mt-2 uppercase tracking-widest">Hover over assets to freeze structural motion</p>
     </div>
 
-    <!-- Outer Frame Window -->
-    <div class="w-full relative flex items-center overflow-x-hidden group/belt">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 relative z-20 group/arena">
         
-        <!-- Left & Right Vignette Blurs for Cinema Vignette Framing -->
-        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0b1426] to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0b1426] to-transparent z-10 pointer-events-none"></div>
-
-        <!-- The Running Track Loop -->
-        <div class="flex gap-6 whitespace-nowrap animate-conveyor group-hover/belt:[animation-play-state:paused]">
-            
-            <!-- Loop Array 1 -->
-            <div class="flex gap-6 shrink-0 items-center">
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme1.jpg" alt="Propaganda 1" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme2.jpg" alt="Propaganda 2" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme3.jpg" alt="Propaganda 3" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme4.jpg" alt="Propaganda 4" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme5.jpg" alt="Propaganda 5" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme6.jpg" alt="Propaganda 6" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme7.jpg" alt="Propaganda 7" class="w-full h-full object-cover"></div>
-                
-            </div>
-
-            <!-- Loop Array 2 (Exact duplication required to anchor seamless visual loop point) -->
-            <div class="flex gap-6 shrink-0 items-center" aria-hidden="true">
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme1.jpg" alt="Propaganda 1" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme2.jpg" alt="Propaganda 2" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme3.jpg" alt="Propaganda 3" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme4.jpg" alt="Propaganda 4" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme5.jpg" alt="Propaganda 5" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme6.jpg" alt="Propaganda 6" class="w-full h-full object-cover"></div>
-                <div class="w-[240px] aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.25)] cursor-pointer"><img src="meme7.jpg" alt="Propaganda 7" class="w-full h-full object-cover"></div>
-                
-            </div>
-
+        <div class="float-card style-one aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme1.jpg" alt="Meme 1" class="w-full h-full object-cover">
         </div>
+        <div class="float-card style-two aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme2.jpg" alt="Meme 2" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-three aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme3.jpg" alt="Meme 3" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-four aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme4.jpg" alt="Meme 4" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-three aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme5.jpg" alt="Meme 5" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-one aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme6.jpg" alt="Meme 6" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-four aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme7.jpg" alt="Meme 7" class="w-full h-full object-cover">
+        </div>
+        <div class="float-card style-two aspect-[9/16] rounded-2xl overflow-hidden border border-slate-800 hover:border-green-400 bg-[#121f38]/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(74,222,128,0.3)] cursor-pointer">
+            <img src="meme8.jpg" alt="Meme 8" class="w-full h-full object-cover">
+        </div>
+
     </div>
 </section>
 
