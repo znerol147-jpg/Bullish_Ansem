@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullish Ansem | $BULLISH</title>
+    
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* 1. Smoke Particle Keyframes */
+        @keyframes driftUp {
+            0% { transform: translateY(100vh) translateX(0) scale(0.5); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-20vh) translateX(50px) scale(1.5); opacity: 0; }
+        }
+        .smoke-particle {
+            position: absolute;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(74,222,128,0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: driftUp var(--speed) linear infinite;
+            animation-delay: var(--delay);
+            left: var(--x);
+            width: var(--size);
+            height: var(--size);
+            filter: blur(8px);
+        }
+
+        /* 2. Pulsing Glow Borders */
+        @keyframes neonPulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(74, 222, 128, 0.15); border-color: rgba(74, 222, 128, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(74, 222, 128, 0.4); border-color: rgba(74, 222, 128, 0.6); }
+        }
+        .pulsing-glow-card {
+            animation: neonPulse 4s ease-in-out infinite;
+        }
+
+        /* 3. Preloader Rotation Keyframe */
+        @keyframes custom-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spinning-loader-ring {
+            animation: custom-spin 1.5s linear infinite;
+        }
+
+        /* 4. On-Scroll Fade & Slide Reveal Setup */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-200 overflow-x-hidden scroll-smooth">
+
+    <div id="preloader" style="position: fixed; inset: 0; z-index: 99999; background-color: #0b1426; display: flex; flex-direction: column; justify-content: center; items-center; width: 100vw; height: 100vh; transition: opacity 0.7s ease-out; font-family: 'Syncopate', sans-serif;">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: auto;">
+            <div style="position: relative; width: 130px; height: 130px; margin-bottom: 28px; display: flex; justify-content: center; items-center;">
+                <div class="spinning-loader-ring" style="position: absolute; inset: 0; border-radius: 50%; padding: 4px; background: conic-gradient(from 0deg, transparent 20%, #4ade80 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.6));"></div>
+                <div style="width: 112px; height: 112px; border-radius: 50%; background-color: #0b1426; padding: 4px; z-index: 2; display: flex; justify-content: center; items-center;">
+                    <img src="bullish.jpg" alt="Loading Token..." style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+            </div>
+            <div class="animate-pulse" style="font-size: 11px; letter-spacing: 0.35em; color: #4ade80; text-transform: uppercase; font-weight: bold; padding-left: 0.35em;">
+                Entering Trenches...
+            </div>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0b1426]/80 backdrop-blur-md border-b border-green-500/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="bullish.jpg" alt="Bullish Ansem Logo" class="w-10 h-10 rounded-full border border-green-400">
+                <span class="heading-font text-sm font-bold tracking-wider text-white">$BULLISH</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-bold">
+                <a href="#hero" class="hover:text-green-400 transition">Home</a>
+                <a href="#about" class="hover:text-green-400 transition">About</a>
+                <a href="#mission" class="hover:text-green-400 transition">Mission</a>
+                <a href="#chart" class="hover:text-green-400 transition">Live Chart</a>
+                <a href="#community" class="hover:text-green-400 transition">Community</a>
+            </nav>
+            <a href="YOUR_RAYDIUM_OR_PUMP_FUN_LINK_HERE" target="_blank" class="neon-bg text-[#0b1426] px-5 py-2 rounded-lg font-bold uppercase tracking-wider text-xs neon-glow-hover">
+                Buy Now
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center pt-24 px-6 text-center relative overflow-hidden">
+        <div class="smoke-particle" style="--x: 15%; --size: 90px; --speed: 8s; --delay: 0s;"></div>
+        <div class="smoke-particle" style="--x: 45%; --size: 120px; --speed: 11s; --delay: 2s;"></div>
+        <div class="smoke-particle" style="--x: 75%; --size: 80px; --speed: 9s; --delay: 4s;"></div>
+        <div class="smoke-particle" style="--x: 30%; --size: 150px; --speed: 14s; --delay: 1s;"></div>
+        <div class="smoke-particle" style="--x: 85%; --size: 100px; --speed: 10s; --delay: 6s;"></div>
+
+        <div class="absolute w-[300px] h-[300px] bg-green-500/10 blur-[120px] top-1/4 rounded-full pointer-events-none"></div>
+        
+        <div class="z-10 max-w-3xl mx-auto">
+            <div class="relative inline-block mb-6">
+                <img src="bullish.jpg" alt="Bullish Ansem" class="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto neon-border border-4 object-cover">
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-green-400 text-[#0b1426] font-bold px-4 py-1 rounded text-xs tracking-widest uppercase">
+                    SOLANA
+                </div>
+            </div>
+
+            <h1 id="scramble-text" class="heading-font text-4xl md:text-6xl font-bold tracking-tighter text-white mb-2min-h-[50px] md:min-h-[70px]">
+                BULLISH ANSEM
+            </h1>
+            <p class="neon-text heading-font text-2xl md:text-3xl font-bold mb-8 tracking-widest">
+                $BULLISH
+            </p>
+
+            <div class="bg-[#121f38] border border-green-500/30 rounded-xl p-4 max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+                <div class="flex items-center space-x-3 w-full overflow-hidden">
+                    <span class="text-green-400 text-xs font-bold uppercase tracking-wider">CA:</span>
+                    <span id="caText" class="text-slate-400 font-mono text-sm truncate select-all">0x00000000000000000000000000000000</span>
+                </div>
+                <button onclick="copyCA()" class="w-full sm:w-auto bg-green-500/10 hover:bg-green-500/20 text-green-400 border border-green-500/40 px-4 py-2 rounded-lg text-sm font-bold transition flex items-center justify-center space-x-2 whitespace-nowrap">
+                    <i class="fa-regular fa-copy"></i>
+                    <span id="copyBtnText">Copy</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="YOUR_RAYDIUM_LINK" target="_blank" class="w-full sm:w-auto neon-bg text-[#0b1426] px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm neon-glow-hover">
+                    <i class="fa-solid fa-rocket mr-2"></i> Buy on Pumpfun
+                </a>
+                <a href="#chart" class="w-full sm:w-auto bg-[#121f38] hover:bg-[#192b4d] border border-slate-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm transition">
+                    <i class="fa-solid fa-chart-line mr-2"></i> View Chart
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-green-500/10 max-w-7xl mx-auto">
+
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto relative reveal-on-scroll">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 text-center md:text-left">
+                <h2 class="heading-font text-3xl font-bold text-white mb-4">THE CONVICTION</h2>
+                <p class="neon-text text-xl font-bold uppercase tracking-wide">Same conviction same cycle but this time with: $BULLISH | Bullish Ansem</p>
+            </div>
+            <div class="md:col-span-7 bg-[#121f38]/60 border p-8 rounded-2xl relative overflow-hidden pulsing-glow-card">
+                <div class="absolute top-0 right-0 p-4 text-green-500/10 text-7xl font-serif">“</div>
+                <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                    There was almost no volume left in the trenches. Then Ansem posted that he was buying memes. Since then, we’ve seen liquidity return, volume pick up, and the trenches come back to life. Whether people like it or not, he’ve been a saviour for the meme space lately.
+                </p>
+                <p class="text-slate-300 text-lg leading-relaxed font-bold border-l-4 border-green-400 pl-4">
+                    That’s why $BULLISH as the bullish ansem makes perfect sense. The bullish ansem charges when everyone else stops believing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-green-500/10 max-w-7xl mx-auto">
+
+    <section id="mission" class="py-24 px-6 text-center max-w-4xl mx-auto reveal-on-scroll">
+        <h2 class="heading-font text-3xl font-bold text-white mb-6">THE MISSION</h2>
+        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            Reviving the trenches with pure meta energy and reinforcing the cycle's supreme narrative.
+        </p>
+        
+        <div class="bg-gradient-to-br from-[#121f38] to-[#0b1426] border-2 border-dashed p-8 rounded-2xl pulsing-glow-card">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-400/10 text-green-400 rounded-full mb-4 text-2xl">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <h3 class="heading-font text-xl font-bold text-white mb-2">AUTOMATED ECOSYSTEM FEES</h3>
+            <p class="text-green-400 font-bold uppercase tracking-wider text-sm mb-4">Redirecting fees to Ansem's leaked wallet</p>
+            <p class="text-sm text-slate-400 max-w-md mx-auto">
+                Supporting the culture maker directly. Every volume tick pumps back into the source to ensure the trenches stay supercharged forever.
+            </p>
+        </div>
+    </section>
+
+    <hr class="border-green-500/10 max-w-7xl mx-auto">
+
+    <section id="chart" class="py-24 px-6 max-w-6xl mx-auto reveal-on-scroll">
+        <h2 class="heading-font text-3xl font-bold text-center text-white mb-12">LIVE CHART</h2>
+        <div class="w-full bg-[#121f38] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl aspect-[16/9] min-h-[450px] flex flex-col justify-center items-center p-4">
+            <iframe 
+                src="https://dexscreener.com/solana/fy7hk6mhvpwdr7vsl1rdfxz1pck6q822x3vf6muawq22" 
+                class="w-full h-full border-0 rounded-xl"
+                title="Dexscreener Chart">
+            </iframe>
+        </div>
+    </section>
+
+    <hr class="border-green-500/10 max-w-7xl mx-auto">
+
+    <section id="community" class="py-24 px-6 text-center relative reveal-on-scroll">
+        <div class="absolute w-[200px] h-[200px] bg-green-500/5 blur-[100px] bottom-1/4 left-1/4 rounded-full pointer-events-none"></div>
+        <div class="max-w-2xl mx-auto">
+            <h2 class="heading-font text-3xl font-bold text-white mb-4">JOIN THE TRENCHES</h2>
+            <p class="text-slate-400 mb-8">Don't miss the charge. Connect with the community 24/7.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="YOUR_TELEGRAM_LINK" target="_blank" class="w-full sm:w-auto bg-[#121f38] hover:bg-[#192b4d] border border-slate-800 hover:border-green-500/40 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 transition group">
+                    <i class="fa-brands fa-telegram text-2xl text-sky-400 group-hover:scale-110 transition"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="YOUR_TWITTER_LINK" target="_blank" class="w-full sm:w-auto bg-[#121f38] hover:bg-[#192b4d] border border-slate-800 hover:border-green-500/40 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 transition group">
+                    <i class="fa-brands fa-x-twitter text-2xl text-white group-hover:scale-110 transition"></i>
+                    <span>Twitter / X</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#070d1a] border-t border-slate-900 py-8 text-center text-xs text-slate-500 uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 $BULLISH. All rights reserved.</p>
+            <p>DeFi Memecoin with no intrinsic value. Trade at your own risk.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy Contract Logic
+        function copyCA() {
+            const caText = document.getElementById("caText").innerText;
+            navigator.clipboard.writeText(caText).then(() => {
+                const copyBtnText = document.getElementById("copyBtnText");
+                copyBtnText.innerText = "Copied!";
+                setTimeout(() => { copyBtnText.innerText = "Copy"; }, 2000);
+            });
+        }
+
+        // Cyber Scramble Header Algorithm
+        function runTextScramble() {
+            const target = document.getElementById("scramble-text");
+            const finalPhrase = "BULLISH ANSEM";
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_#@$";
+            let frame = 0;
+            
+            const interval = setInterval(() => {
+                let currentOutput = "";
+                for (let i = 0; i < finalPhrase.length; i++) {
+                    if (finalPhrase[i] === " ") {
+                        currentOutput += " ";
+                        continue;
+                    }
+                    if (i < frame / 3) {
+                        currentOutput += finalPhrase[i];
+                    } else {
+                        currentOutput += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+                target.innerText = currentOutput;
+                if (frame / 3 >= finalPhrase.length) clearInterval(interval);
+                frame++;
+            }, 30);
+        }
+
+        // On-Scroll Intersection Observer Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Combined Preloader & Reveal Delay Handler
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.pointerEvents = 'none';
+                
+                // Run text scramble decryption right as the page displays
+                setTimeout(() => {
+                    preloader.remove();
+                    runTextScramble();
+                }, 700);
+            }, 2500); // 2.5s forced display to enjoy the custom ring
+        });
+    </script>
+</body>
+</html>
