@@ -83,6 +83,19 @@
             transform: translateY(-2px);
             transition: all 0.3s ease;
         }
+
+        @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+}
+.animate-marquee:hover {
+    animation-play-state: paused; /* Pauses the ticker when users hover over it */
+}
     </style>
 </head>
 <body class="text-slate-200 overflow-x-hidden scroll-smooth">
@@ -121,6 +134,28 @@
             </a>
         </div>
     </header>
+
+    <!-- Live Ticker Bar -->
+<div class="w-full bg-[#070d1a] border-b border-green-500/20 py-2 overflow-hidden position relative z-40 mt-[73px]">
+    <div class="flex whitespace-nowrap animate-marquee text-xs font-mono uppercase tracking-widest text-green-400">
+        <span class="mx-4"><i class="fa-solid fa-fire mr-2"></i> $BULLISH PRICE: PUMPING</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-chart-line mr-2"></i> LP: 100% BURNED</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-shield-halved mr-2"></i> OWNERSHIP: RENOUNCED</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-bolt mr-2"></i> META: ANSEM CYCLE SUPREME</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <!-- Duplicate text below to ensure smooth infinite looping scroll effect -->
+        <span class="mx-4"><i class="fa-solid fa-fire mr-2"></i> $BULLISH PRICE: PUMPING</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-chart-line mr-2"></i> LP: 100% BURNED</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-shield-halved mr-2"></i> OWNERSHIP: RENOUNCED</span>
+        <span class="mx-4 text-slate-400">|</span>
+        <span class="mx-4"><i class="fa-solid fa-bolt mr-2"></i> META: ANSEM CYCLE SUPREME</span>
+    </div>
+</div>
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex flex-col justify-center items-center pt-24 px-6 text-center relative overflow-hidden">
