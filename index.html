@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bullish Ansem | $BULLISH</title>
     
+    <!-- Fallback Script for Static Deployment -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Third-Party Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="bullish.jpg" />
 
+    <!-- Global Advanced Animations Stylesheet Core -->
     <style>
-        /* 1. Smoke Particle Keyframes */
         @keyframes driftUp {
             0% { transform: translateY(100vh) translateX(0) scale(0.5); opacity: 0; }
             10% { opacity: 0.4; }
@@ -34,8 +35,6 @@
             height: var(--size);
             filter: blur(8px);
         }
-
-        /* 2. Pulsing Glow Borders */
         @keyframes neonPulse {
             0%, 100% { box-shadow: 0 0 12px rgba(74, 222, 128, 0.15); border-color: rgba(74, 222, 128, 0.2); }
             50% { box-shadow: 0 0 25px rgba(74, 222, 128, 0.4); border-color: rgba(74, 222, 128, 0.6); }
@@ -43,8 +42,6 @@
         .pulsing-glow-card {
             animation: neonPulse 4s ease-in-out infinite;
         }
-
-        /* 3. Preloader Rotation Keyframe */
         @keyframes custom-spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -52,8 +49,6 @@
         .spinning-loader-ring {
             animation: custom-spin 1.5s linear infinite;
         }
-
-        /* 4. On-Scroll Fade & Slide Reveal Setup */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -63,10 +58,35 @@
             opacity: 1;
             transform: translateY(0);
         }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0b1426;
+        }
+        .heading-font {
+            font-family: 'Syncopate', sans-serif;
+        }
+        .neon-text {
+            color: #4ade80;
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.5), 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+        .neon-border {
+            border-color: #4ade80;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+        }
+        .neon-bg {
+            background-color: #4ade80;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 25px rgba(74, 222, 128, 0.8);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="text-slate-200 overflow-x-hidden scroll-smooth">
 
+    <!-- Hardcoded Custom Logo Gradient Preloader -->
     <div id="preloader" style="position: fixed; inset: 0; z-index: 99999; background-color: #0b1426; display: flex; flex-direction: column; justify-content: center; items-center; width: 100vw; height: 100vh; transition: opacity 0.7s ease-out; font-family: 'Syncopate', sans-serif;">
         <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: auto;">
             <div style="position: relative; width: 130px; height: 130px; margin-bottom: 28px; display: flex; justify-content: center; items-center;">
@@ -81,6 +101,7 @@
         </div>
     </div>
 
+    <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#0b1426]/80 backdrop-blur-md border-b border-green-500/10">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -100,6 +121,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex flex-col justify-center items-center pt-24 px-6 text-center relative overflow-hidden">
         <div class="smoke-particle" style="--x: 15%; --size: 90px; --speed: 8s; --delay: 0s;"></div>
         <div class="smoke-particle" style="--x: 45%; --size: 120px; --speed: 11s; --delay: 2s;"></div>
@@ -117,13 +139,14 @@
                 </div>
             </div>
 
-            <h1 id="scramble-text" class="heading-font text-4xl md:text-6xl font-bold tracking-tighter text-white mb-2min-h-[50px] md:min-h-[70px]">
+            <h1 id="scramble-text" class="heading-font text-4xl md:text-6xl font-bold tracking-tighter text-white mb-2 min-h-[50px] md:min-h-[70px]">
                 BULLISH ANSEM
             </h1>
             <p class="neon-text heading-font text-2xl md:text-3xl font-bold mb-8 tracking-widest">
                 $BULLISH
             </p>
 
+            <!-- CA Box -->
             <div class="bg-[#121f38] border border-green-500/30 rounded-xl p-4 max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
                 <div class="flex items-center space-x-3 w-full overflow-hidden">
                     <span class="text-green-400 text-xs font-bold uppercase tracking-wider">CA:</span>
@@ -148,13 +171,14 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
+    <!-- About Section -->
     <section id="about" class="py-24 px-6 max-w-5xl mx-auto relative reveal-on-scroll">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-5 text-center md:text-left">
                 <h2 class="heading-font text-3xl font-bold text-white mb-4">THE CONVICTION</h2>
                 <p class="neon-text text-xl font-bold uppercase tracking-wide">Same conviction same cycle but this time with: $BULLISH | Bullish Ansem</p>
             </div>
-            <div class="md:col-span-7 bg-[#121f38]/60 border p-8 rounded-2xl relative overflow-hidden pulsing-glow-card">
+            <div class="md:col-span-7 bg-[#121f38]/60 border border-slate-800 p-8 rounded-2xl relative overflow-hidden pulsing-glow-card">
                 <div class="absolute top-0 right-0 p-4 text-green-500/10 text-7xl font-serif">“</div>
                 <p class="text-slate-300 text-lg leading-relaxed mb-6">
                     There was almost no volume left in the trenches. Then Ansem posted that he was buying memes. Since then, we’ve seen liquidity return, volume pick up, and the trenches come back to life. Whether people like it or not, he’ve been a saviour for the meme space lately.
@@ -168,13 +192,14 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
+    <!-- Mission Section -->
     <section id="mission" class="py-24 px-6 text-center max-w-4xl mx-auto reveal-on-scroll">
         <h2 class="heading-font text-3xl font-bold text-white mb-6">THE MISSION</h2>
         <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
             Reviving the trenches with pure meta energy and reinforcing the cycle's supreme narrative.
         </p>
         
-        <div class="bg-gradient-to-br from-[#121f38] to-[#0b1426] border-2 border-dashed p-8 rounded-2xl pulsing-glow-card">
+        <div class="bg-gradient-to-br from-[#121f38] to-[#0b1426] border-2 border-dashed border-green-500/30 p-8 rounded-2xl pulsing-glow-card">
             <div class="inline-flex items-center justify-center w-16 h-16 bg-green-400/10 text-green-400 rounded-full mb-4 text-2xl">
                 <i class="fa-solid fa-wallet"></i>
             </div>
@@ -188,11 +213,12 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
+    <!-- Live Chart Section -->
     <section id="chart" class="py-24 px-6 max-w-6xl mx-auto reveal-on-scroll">
         <h2 class="heading-font text-3xl font-bold text-center text-white mb-12">LIVE CHART</h2>
         <div class="w-full bg-[#121f38] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl aspect-[16/9] min-h-[450px] flex flex-col justify-center items-center p-4">
             <iframe 
-                src="https://dexscreener.com/solana/fy7hk6mhvpwdr7vsl1rdfxz1pck6q822x3vf6muawq22" 
+                src="https://dexscreener.com/solana/4a6dfg7h8j9k?embed=1&theme=dark&trades=0" 
                 class="w-full h-full border-0 rounded-xl"
                 title="Dexscreener Chart">
             </iframe>
@@ -201,6 +227,7 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
+    <!-- Community Section -->
     <section id="community" class="py-24 px-6 text-center relative reveal-on-scroll">
         <div class="absolute w-[200px] h-[200px] bg-green-500/5 blur-[100px] bottom-1/4 left-1/4 rounded-full pointer-events-none"></div>
         <div class="max-w-2xl mx-auto">
@@ -219,6 +246,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-[#070d1a] border-t border-slate-900 py-8 text-center text-xs text-slate-500 uppercase tracking-widest">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p>&copy; 2026 $BULLISH. All rights reserved.</p>
@@ -226,8 +254,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        // Copy Contract Logic
         function copyCA() {
             const caText = document.getElementById("caText").innerText;
             navigator.clipboard.writeText(caText).then(() => {
@@ -237,7 +265,6 @@
             });
         }
 
-        // Cyber Scramble Header Algorithm
         function runTextScramble() {
             const target = document.getElementById("scramble-text");
             const finalPhrase = "BULLISH ANSEM";
@@ -263,7 +290,6 @@
             }, 30);
         }
 
-        // On-Scroll Intersection Observer Reveal Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -276,19 +302,16 @@
             observer.observe(section);
         });
 
-        // Combined Preloader & Reveal Delay Handler
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.pointerEvents = 'none';
-                
-                // Run text scramble decryption right as the page displays
                 setTimeout(() => {
                     preloader.remove();
                     runTextScramble();
                 }, 700);
-            }, 2500); // 2.5s forced display to enjoy the custom ring
+            }, 2500);
         });
     </script>
 </body>
