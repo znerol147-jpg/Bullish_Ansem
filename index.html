@@ -107,6 +107,16 @@
     animation: conveyor 40s linear infinite;
 }
 
+        /* 3D Social Matrix Hover Engineering */
+        .matrix-card {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+        .matrix-card:hover {
+            transform: perspective(1000px) rotateX(4deg) rotateY(-2deg) translateY(-4px);
+            box-shadow: 0 15px 35px rgba(74, 222, 128, 0.08);
+        }
 
     </style>
 </head>
@@ -219,22 +229,37 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
-    <!-- About Section -->
+<!-- About Section -->
     <section id="about" class="py-24 px-6 max-w-5xl mx-auto relative reveal-on-scroll">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Header Column -->
             <div class="md:col-span-5 text-center md:text-left">
                 <h2 class="heading-font text-3xl font-bold text-white mb-4">THE CONVICTION</h2>
-                <p class="neon-text text-xl font-bold uppercase tracking-wide">Same conviction same cycle but this time with: $BULLISH | Bullish Ansem</p>
+                <p class="neon-text text-xl font-bold uppercase tracking-wide">$BULLISH | Bullish Ansem</p>
+                <p class="text-xs text-slate-500 font-mono uppercase tracking-widest mt-4">
+                    There are traders who follow narratives, and there are traders who create them.
+                </p>
             </div>
+            
+            <!-- Right Narrative Dashboard Panel -->
             <div class="md:col-span-7 bg-[#121f38]/60 border border-slate-800 p-8 rounded-2xl relative overflow-hidden pulsing-glow-card">
                 <div class="absolute top-0 right-0 p-4 text-green-500/10 text-7xl font-serif">“</div>
-                <p class="text-slate-300 text-lg leading-relaxed mb-6">
-                    There was almost no volume left in the trenches. Then Ansem posted that he was buying memes. Since then, we’ve seen liquidity return, volume pick up, and the trenches come back to life. Whether people like it or not, he’ve been a saviour for the meme space lately.
+                
+                <p class="text-slate-300 text-base leading-relaxed mb-6">
+                    When the trenches were quiet, Ansem (<a href="https://x.com/blknoiz06" target="_blank" class="text-green-400 hover:underline">@blknoiz06</a>) stayed relentlessly bullish—backing conviction over fear, opportunity over noise, and memes over doubt. His outlook helped reignite attention around Solana and the meme ecosystem, earning him a reputation as one of CT's strongest bulls.
                 </p>
-                <p class="text-slate-300 text-lg leading-relaxed font-bold border-l-4 border-green-400 pl-4">
-                    That’s why $BULLISH as the bullish ansem makes perfect sense. The bullish ansem charges when everyone else stops believing.
+                
+                <p class="text-slate-300 text-base leading-relaxed mb-6 border-l-4 border-green-400 pl-4 font-bold">
+                    That's what $BULLISH represents. Not just a green face. Not just another meme.
+                </p>
+                
+                <p class="text-slate-400 text-sm leading-relaxed font-mono uppercase tracking-wide">
+                    It's the mindset of buying when everyone else is afraid, holding through the chaos, and believing before the crowd catches on. 
+                    <span class="block text-green-400 font-bold mt-2">Bullish isn't a trend. It's conviction.</span>
                 </p>
             </div>
+
         </div>
     </section>
 
@@ -321,29 +346,91 @@
 
     <hr class="border-green-500/10 max-w-7xl mx-auto">
 
-    <!-- Community Section -->
-    <section id="community" class="py-24 px-6 text-center relative reveal-on-scroll">
-        <div class="absolute w-[200px] h-[200px] bg-green-500/5 blur-[100px] bottom-1/4 left-1/4 rounded-full pointer-events-none"></div>
-        <div class="max-w-2xl mx-auto">
-            <h2 class="heading-font text-3xl font-bold text-white mb-4">JOIN THE TRENCHES</h2>
-            <p class="text-slate-400 mb-8">Don't miss the charge. Connect with the community 24/7.</p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="https://t.me/bullishansem?fbclid=IwY2xjawSvTXBleHRuA2FlbQIxMABicmlkETFHQUd3U0Y4SnduN2p1U2F5c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHpS4nrHv_kHXIs2wOjNqJ-ECvHhoOa785za2HX_Zf3TCfXhGgeOd65Gvjroo_aem_J0w9pCdSDXvzq2YzvGn6bw" target="_blank" class="w-full sm:w-auto bg-[#121f38] hover:bg-[#192b4d] border border-slate-800 hover:border-green-500/40 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 transition group">
-                    <i class="fa-brands fa-telegram text-2xl text-sky-400 group-hover:scale-110 transition"></i>
-                    <span>Telegram</span>
+<!-- Community Section: 3D Social Split-Matrix -->
+    <section id="community" class="py-24 px-6 relative reveal-on-scroll">
+        <div class="absolute w-[300px] h-[300px] bg-green-500/5 blur-[120px] bottom-1/2 left-1/2 -translate-x-1/2 rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-2xl md:text-3xl font-bold text-white tracking-widest">
+                    JOIN THE TRENCHES <span class="text-green-400">//</span> TELEMETRY
+                </h2>
+                <p class="text-xs text-slate-400 font-mono mt-2 uppercase tracking-widest">Select an entry node to bridge network connections</p>
+            </div>
+
+            <!-- The Split Matrix Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                <!-- Glowing Laser Center Divider Line (Desktop Only) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-green-400 to-transparent -translate-x-1/2 z-10 opacity-30 shadow-[0_0_15px_rgba(74,222,128,0.5)]"></div>
+
+                <!-- Telegram Matrix Block -->
+                <a href="https://t.me/bullishansem?fbclid=IwY2xjawSvT_JleHRuA2FlbQIxMABicmlkETFHQUd3U0Y4SnduN2p1U2F5c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHpS4nrHv_kHXIs2wOjNqJ-ECvHhoOa785za2HX_Zf3TCfXhGgeOd65Gvjroo_aem_J0w9pCdSDXvzq2YzvGn6bw" target="_blank" class="matrix-card group relative bg-[#121f38]/30 border border-slate-800 hover:border-green-400 rounded-2xl p-10 overflow-hidden transition-all duration-500 flex flex-col items-center text-center justify-center min-h-[280px]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] transition-all duration-500">
+                            <i class="fa-brands fa-telegram"></i>
+                        </div>
+                        <h3 class="heading-font text-xl font-bold text-white mb-2 tracking-wide">TELEGRAM NODE</h3>
+                        <p class="text-slate-400 text-sm max-w-xs font-mono">COMMS // ALPHA SHARES // INTEL</p>
+                    </div>
                 </a>
-                <a href="https://x.com/bullishansem?fbclid=IwY2xjawSvTWhleHRuA2FlbQIxMABicmlkETFHQUd3U0Y4SnduN2p1U2F5c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsqRAiMpB2Kd6Ov5eSfWzYWaoA3lX11cLCXedyVJJYpt7A-W4sFqW08btTAF_aem_8zaKKJk8i2JABnXQeZtMoA" target="_blank" class="w-full sm:w-auto bg-[#121f38] hover:bg-[#192b4d] border border-slate-800 hover:border-green-500/40 px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 transition group">
-                    <i class="fa-brands fa-x-twitter text-2xl text-white group-hover:scale-110 transition"></i>
-                    <span>Twitter / X</span>
+
+                <!-- Twitter / X Matrix Block -->
+                <a href="https://x.com/bullishansem?fbclid=IwY2xjawSvT85leHRuA2FlbQIxMABicmlkETFHQUd3U0Y4SnduN2p1U2F5c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHsqRAiMpB2Kd6Ov5eSfWzYWaoA3lX11cLCXedyVJJYpt7A-W4sFqW08btTAF_aem_8zaKKJk8i2JABnXQeZtMoA" target="_blank" class="matrix-card group relative bg-[#121f38]/30 border border-slate-800 hover:border-green-400 rounded-2xl p-10 overflow-hidden transition-all duration-500 flex flex-col items-center text-center justify-center min-h-[280px]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-400/0 to-green-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-white/5 border border-white/10 text-white rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-500">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
+                        <h3 class="heading-font text-xl font-bold text-white mb-2 tracking-wide">X CHANNEL</h3>
+                        <p class="text-slate-400 text-sm max-w-xs font-mono">BROADCASTS // MOMENTUM // LORE</p>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#070d1a] border-t border-slate-900 py-8 text-center text-xs text-slate-500 uppercase tracking-widest">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; 2026 $BULLISH. All rights reserved.</p>
+    <hr class="border-green-500/10 max-w-7xl mx-auto">
+
+    <!-- Token Metrics Dashboard Footer -->
+    <footer class="bg-[#050a14] border-t border-slate-900 pt-16 pb-8 font-mono text-xs">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            
+            <!-- Column 1: System Specs -->
+            <div class="space-y-3">
+                <div class="heading-font font-bold text-white text-sm tracking-wider mb-2">SYSTEM.LOG</div>
+                <div class="text-slate-400 flex justify-between border-b border-slate-900 pb-1"><span>SUPPLY:</span> <span class="text-green-400">1,000,000,000</span></div>
+                <div class="text-slate-400 flex justify-between border-b border-slate-900 pb-1"><span>NETWORK:</span> <span class="text-slate-200">SOLANA MAINNET</span></div>
+                <div class="text-slate-400 flex justify-between pb-1"><span>STABILITY:</span> <span class="text-green-400 animate-pulse">● OPERATIONAL</span></div>
+            </div>
+
+            <!-- Column 2: Quick Directives -->
+            <div class="space-y-2">
+                <div class="heading-font font-bold text-white text-sm tracking-wider mb-4">DIRECTIVES</div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="#hero" class="text-slate-400 hover:text-green-400 transition-colors">// HOME</a>
+                    <a href="#about" class="text-slate-400 hover:text-green-400 transition-colors">// ABOUT</a>
+                    <a href="#mission" class="text-slate-400 hover:text-green-400 transition-colors">// MISSION</a>
+                    <a href="#chart" class="text-slate-400 hover:text-green-400 transition-colors">// CHART</a>
+                </div>
+            </div>
+
+            <!-- Column 3: Telemetry Notice -->
+            <div class="space-y-3">
+                <div class="heading-font font-bold text-white text-sm tracking-wider mb-2">RISK.WARN</div>
+                <p class="text-slate-500 leading-relaxed uppercase text-[11px]">
+                    $BULLISH IS A CULTURAL METAGAME CONSTRUCT WITH NO INTRINSIC VALUE VALUE MATRIX. SYSTEM INGESTION HARBORS EXTREME VOLATILITY RISK. LIQUIDATE RESPONSIBLY.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright strip -->
+        <div class="max-w-7xl mx-auto px-6 border-t border-slate-950 pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-600 gap-4">
+            <div>&copy; 2026 $BULLISH // CORE MATRIX ALL RIGHTS RESERVED.</div>
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                <span>SYS_TIME: <span id="footer-clock">00:00:00 UTC</span></span>
+            </div>
         </div>
     </footer>
 
@@ -448,6 +535,17 @@ function prevSlide() {
     currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
     updateSliderView();
 }
+
+        // Telemetry Footer Clock Synchronizer
+        function updateFooterClock() {
+            const clockTarget = document.getElementById("footer-clock");
+            if(clockTarget) {
+                const now = new Date();
+                clockTarget.innerText = now.toUTCString().replace("GMT", "UTC");
+            }
+        }
+        setInterval(updateFooterClock, 1000);
+        updateFooterClock();
     </script>
 </body>
 </html>
